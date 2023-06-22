@@ -8,17 +8,17 @@ public function __construct(){
 }
 
 //funcion para registrar los usuarios
-public function addadmi($Nombreusu,$Apellidousu,$Usuariousu,$Passwordusu,$Perfil,$Estado);
+public function addadmi($Nombreusu,$Apellidousu,$Usuariousu,$Passwordusu,$Perfil,$Estadousu);
 {
   //Crear la sentencia SQL
-  $statement = $this->bd->prepare("INSERT INTO USUARIOS(NOMBREUSU,APELLIDOUSU,USUARIO,PASSWORDU,PERFIL,ESTADO) VALUES(:NOMBREUSU,:APELLIDOUSU,:USUARIO,:PASSWORDU, :'Administrador',:'Activo')");
+  $statement = $this->bd->prepare("INSERT INTO USUARIOS(NOMBREUSU,APELLIDOUSU,USUARIO,PASSWORDU,PERFIL,ESTADO) VALUES(:NOMBREUSU,:APELLIDOUSU,:USUARIO,:PASSWORDU, :'Perfil',:'Estadousu')");
 
   $statement->bindParam(':Nombreusu', $Nombreusu);
   $statement->bindParam(':Apellidousu', $Apellidousu);
   $statement->bindParam(':Usuariousu', $Usuariousu);
   $statement->bindParam(':Passwordusu', $Passwordusu);
   $statement->bindParam(':Perfil', $Perfil);
-  $statement->bindParam(':Estado', $Estado);
+  $statement->bindParam(':Estadousu', $Estadousu);
   if ($statement->execute())
   {
 
@@ -65,17 +65,17 @@ eow { $result;}
 }
 
 //Actualizar los datos del usuario
-public function updatead($Id,Nombreusu,$Apellidousu,$Usuariousu,$Passwordusu,$Estado);
+public function updatead($Id,Nombreusu,$Apellidousu,$Usuariousu,$Passwordusu,$Estadousu);
 {
 
-$statement=$this->bd->prepare("UPDATE USUARIOS GET NOMBREUSU=Nombreusu,APELLIDOUSU=Apellidousu,USUARIO= Usuariousu,PASSWORDU=Passwordusu,ESTADO=Estado WHERE ID_USUARIO=$Id)");
+$statement=$this->bd->prepare("UPDATE USUARIOS GET NOMBREUSU=Nombreusu,APELLIDOUSU=Apellidousu,USUARIO= Usuariousu,PASSWORDU=Passwordusu,ESTADO=Estadousu WHERE ID_USUARIO=$Id)");
 $statement->bindparam('Id,$Id');
 statement->bindParam('NOMBREUSU,$Nombreusu');
 statement->bindParam('APELLIDOUSU,$Apellidousu');
 statement->bindParam('USUARIO,$Usuariousu');
 statement->bindParam('PASSWORDU,$Passwordusu');
 statement->bindParam('PASSWORDU,$Passwordusu');
-statement->bindParam('ESTADO,$Estado');
+statement->bindParam('ESTADO,$Estadousu');
 
 IF ($statement->execute())
 {

@@ -3,7 +3,7 @@
 
 class Conexion
 {
-    protected $bd;
+    public $bd;
     private $driver = "mysql";
     private $host = "localhost";
     private $namebd = "notas2023php";
