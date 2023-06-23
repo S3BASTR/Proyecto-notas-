@@ -110,14 +110,13 @@ button{
 <!DOCTYPE html>
 <html lang="es">
 <head>
-<link rel="stylesheet" href="../../CSS\estilos.css">
-  <title>Registro Usuario</title>
+<title>Registro Usuario</title>
 </head>
 <body>
     <section>
         <div class="form-box">
             <div class="form-value">
-                <form action="../Controladores/agregarusuario.php">
+                <form action="../Controladores/Controladoradministrador.php">
                     <h2> Registro de usuario </h2>
 
                     <div class="inputbox">
@@ -161,7 +160,7 @@ button{
                             </select>
                         </div>
                     </div>
-                    <button> Ingresar </button>
+                    <button type="submit" class="btn btn-primary d-block mx-auto">REGISTRAR</button>
 
                 </form>
             </div>

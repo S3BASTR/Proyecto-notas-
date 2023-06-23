@@ -2,7 +2,7 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <link rel="stylesheet" href="CSS\estilos.css">
+  <link rel="stylesheet" href="../CSS\estilos.css">
   <title>Inicio de sesión</title>
 </head>
 <body>

@@ -1,10 +1,11 @@
 <?php
+
 include_once('../../Conexion.php');
 include_once('../modelos/administrador.php');
 
 //Crear el objeto de la clase administrador;
 
-$admin = new administrador();
+$admin = new Administrador();
 
 //Definir los argumentos que se van a enviar por medio de la funcion 
 

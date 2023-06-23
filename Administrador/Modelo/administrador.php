@@ -8,17 +8,17 @@ public function __construct(){
 }
 
 //funcion para registrar los usuarios
-public function addadmi($Nombreusu,$Apellidousu,$Usuariousu,$Passwordusu,$Perfil,$Estadousu);
+public function addadmi($NOMBREUSU,$APELLIDOUSU,$USUARIO,$PASSWORDU,$PERFIL,$ESTADO);
 {
   //Crear la sentencia SQL
-  $statement = $this->bd->prepare("INSERT INTO USUARIOS(NOMBREUSU,APELLIDOUSU,USUARIO,PASSWORDU,PERFIL,ESTADO) VALUES(:NOMBREUSU,:APELLIDOUSU,:USUARIO,:PASSWORDU, :'Perfil',:'Estadousu')");
+  $statement = $this->bd->prepare("INSERT INTO usuarios(NOMBREUSU,APELLIDOUSU,USUARIO,PASSWORDU,PERFIL,ESTADO) VALUES(:NOMBREUSU,:APELLIDOUSU,:USUARIO,:PASSWORDU,:PERFIL,:ESTADO)");
 
-  $statement->bindParam(':Nombreusu', $Nombreusu);
-  $statement->bindParam(':Apellidousu', $Apellidousu);
-  $statement->bindParam(':Usuariousu', $Usuariousu);
-  $statement->bindParam(':Passwordusu', $Passwordusu);
-  $statement->bindParam(':Perfil', $Perfil);
-  $statement->bindParam(':Estadousu', $Estadousu);
+  $statement->bindParam(':NOMBREUSU', $NOMBREUSU);
+  $statement->bindParam(':APELLIDOUSU', $APELLIDOUSU);
+  $statement->bindParam(':USUARIO', $USUARIO);
+  $statement->bindParam(':PASSWORDU', $PASSWORDU);
+  $statement->bindParam(':PERFIL', $PERFIL);
+  $statement->bindParam(':ESTADO', $ESTADO);
   if ($statement->execute())
   {
 
@@ -74,15 +74,14 @@ statement->bindParam('NOMBREUSU,$Nombreusu');
 statement->bindParam('APELLIDOUSU,$Apellidousu');
 statement->bindParam('USUARIO,$Usuariousu');
 statement->bindParam('PASSWORDU,$Passwordusu');
-statement->bindParam('PASSWORDU,$Passwordusu');
 statement->bindParam('ESTADO,$Estadousu');
 
 IF ($statement->execute())
 {
-  header  ( ´location: ../Pages/index.php')
+  header  ( 'location: ../Pages/index.php')
 }else
 {
-  header ('location: ../Pages/edtitar.php
+  header ( 'location: ../Pages/edtitar.php')
 }
 
 
