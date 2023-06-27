@@ -67,19 +67,27 @@ class Administrador extends Conexion
 
   public function updatead($Id,$Nombreusu,$Apellidousu,$Usuario ,$Passwordu,$Perfil,$Estadousu)
   {
-    $statement=$this->bd->prepare("UPDATE usuarios SET Nombreusu=:Nombreusu,Apellidousu=Apellidousu, Usuario =: Usuariousu,Password=:Passwordusu, Estado=:Estadousu WHERE id_usaurio=$Id");
+    $statement=$this->bd->prepare("UPDATE usuarios SET id_usuarios=:Nombreusu,Apellidousu=Apellidousu, Usuario =: Usuariousu,Password=:Passwordusu, Estado=:Estadousu WHERE id_usaurio=$Id");
     $statement->bindParam(':Id',$Id);
     $statement->bindParam(':Nombreusu',$Nombreusu);
     $statement->bindParam(':Apellidousu',$Apellidousu);
     $statement->bindParam(':Usuariousu',$Usuariousu);
     $statement->bindParam(':Passwordusu',$Passwordu);
+    $statement->bindParam(':Perfil',$Perfil);
     $statement->bindParam(':Estadousu',$Estadousu);
     if($statement->execute())
     {
-      header('Location: ../pages/index-php');
+      echo"<script>
+      alert ('usuario actualizado');
+      window.location = '../pages/index.php';
+      </script>";
+      
     }else
     {
-      header('Location: ../pages/editar.php');
+      echo"<script>
+      alert ('usuario no actualizado');
+      window.location = '../pages/Editar.php';
+      </script>";
     }
 
 

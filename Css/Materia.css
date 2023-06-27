@@ -1,9 +1,11 @@
+@import url('https//fonts.googleapis.com/css2?family=Poppins:wgth@500display=swap');
+
 body{
-    background: rgb(220, 187, 228);
-background: radial-gradient(circle, rgb(173, 153, 196) 0%, rgba(181,70,93,1) 100%);
+    background: rgb(58,180,162);
+    background: linear-gradient(90deg, rgba(58,180,162,1) 0%, rgba(180,253,29,1) 50%, rgba(252,235,69,1) 100%);;
 }
 .navbar{
-    background: linear-gradient(90deg,rgb(194, 121, 188) 35%, rgb(135, 211, 160) 100%);
+    background: linear-gradient(90deg,#4CAF50 35%, rgb(62, 63, 163) 100%);
     box-shadow: 0 1px 5px black;
     overflow: hidden;
     display: flex;
@@ -13,7 +15,6 @@ background: radial-gradient(circle, rgb(173, 153, 196) 0%, rgba(181,70,93,1) 100
    
 }
 .navbar a{
-    color: black;
     font-family: 'poppins', sans-serif;
     float: left;
     display: block;
@@ -29,3 +30,8 @@ background: radial-gradient(circle, rgb(173, 153, 196) 0%, rgba(181,70,93,1) 100
     color: rgb(0, 0, 0);
     border-radius: 10px;
 }
+
+
+
+
+

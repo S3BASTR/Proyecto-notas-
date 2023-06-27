@@ -23,7 +23,7 @@ class Conexion
               echo"<br>";
 
         }catch(PDOEXCEPTION $e){
-            echo"no se puede realizar la conexion".$e.getMessage();
+            echo"no se puede realizar la conexion".$e.getMessage();  
      
 
         }
