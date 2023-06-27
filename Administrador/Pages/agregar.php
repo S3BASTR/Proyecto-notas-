@@ -116,7 +116,7 @@ button{
     <section>
         <div class="form-box">
             <div class="form-value">
-                <form action="../Controladores/Controladoradministrador.php">
+                <form action="../Controladores/agregarUsuario.php" method="POST">
                     <h2> Registro de usuario </h2>
 
                     <div class="inputbox">

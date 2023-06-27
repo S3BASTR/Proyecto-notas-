@@ -1,10 +1,8 @@
 <?php
-include_once('../../Conexion.php')
-class Administrador extends Conexion
-{
-
+include_once('../../Conexion.php');
+class Administrador extends Conexion {
 public function __construct(){
-    $this->bd = parent::__construct();
+  $this->bd = parent::__construct();
 }
 
 //funcion para registrar los usuarios
@@ -12,13 +10,13 @@ public function addadmi($NOMBREUSU,$APELLIDOUSU,$USUARIO,$PASSWORDU,$PERFIL,$EST
 {
   //Crear la sentencia SQL
   $statement = $this->bd->prepare("INSERT INTO usuarios(NOMBREUSU,APELLIDOUSU,USUARIO,PASSWORDU,PERFIL,ESTADO) VALUES(:NOMBREUSU,:APELLIDOUSU,:USUARIO,:PASSWORDU,:PERFIL,:ESTADO)");
-
   $statement->bindParam(':NOMBREUSU', $NOMBREUSU);
   $statement->bindParam(':APELLIDOUSU', $APELLIDOUSU);
   $statement->bindParam(':USUARIO', $USUARIO);
   $statement->bindParam(':PASSWORDU', $PASSWORDU);
   $statement->bindParam(':PERFIL', $PERFIL);
   $statement->bindParam(':ESTADO', $ESTADO);
+
   if ($statement->execute())
   {
 
@@ -39,36 +37,36 @@ header(Location: '../Pages/index.php');
 
 public function getadmin()
 {
+  $resultado = array();
+  $sql="SELECT * FROM usuarios WHERE Perfil='Administrador'";
+  $result= $this->bd->query($sql);
+  if ($result->rowCount()>0) {
 
-  $row = null;
-  $statement=$this->bd->prepare("SELECT * FROM USUARIOS WHERE Perfil='Administrador'");
-  $statement->execute();
-  while ($result->$statement->fetch()) {
-    $row[]=$result;
+  while ($row->$result->fetch()) {
+    $resultado[]=$row;
   }
-  result $row;
+  return $resultado;
 
 }
+}
 
-//Funcion para consultar el ususario de acuerdo a su id
+//Funcion para consultar el usuario de acuerdo a su id
 public function getidad($Id)
 {
 
 $row=null;
-$statement=$this->bd->prepare("SELECT * FROM USUARIOS WHERE ID_USUARIOS = :Id AND Perfil ='Administrador'")
+$statement=$this->bd->prepare("SELECT * FROM usuarios WHERE ID_USUARIOS=:Id");
 $statement->bindParam(':Id',$Id);
 $statement ->execute();
-while ($result->statement .> fetch()) {
-eow { $result;}
-}
+$resultado = $statement->fetch(PDO::FETCH_ASSOC);
+return $resultado;
 
 }
 
 //Actualizar los datos del usuario
-public function updatead($Id,Nombreusu,$Apellidousu,$Usuariousu,$Passwordusu,$Estadousu);
+public function updatead($Id,$NOMBREUSU,$APELLIDOUSU,$USUARIO,$PASSWORDU,$ESTADO); 
 {
-
-$statement=$this->bd->prepare("UPDATE USUARIOS GET NOMBREUSU=Nombreusu,APELLIDOUSU=Apellidousu,USUARIO= Usuariousu,PASSWORDU=Passwordusu,ESTADO=Estadousu WHERE ID_USUARIO=$Id)");
+$statement=$this->bd->prepare("UPDATE usuarios SET NOMBREUSU=Nombreusu,APELLIDOUSU=Apellidousu,USUARIO= Usuariousu,PASSWORDU=Passwordusu,ESTADO=Estadousu WHERE ID_USUARIO=$Id)");
 $statement->bindparam('Id,$Id');
 statement->bindParam('NOMBREUSU,$Nombreusu');
 statement->bindParam('APELLIDOUSU,$Apellidousu');
@@ -76,21 +74,19 @@ statement->bindParam('USUARIO,$Usuariousu');
 statement->bindParam('PASSWORDU,$Passwordusu');
 statement->bindParam('ESTADO,$Estadousu');
 
-IF ($statement->execute())
+if ($statement->execute())
 {
-  header  ( 'location: ../Pages/index.php')
+  header  ('location: ../Pages/index.php')
 }else
 {
-  header ( 'location: ../Pages/edtitar.php')
+  header ('location: ../Pages/edtitar.php')
 }
 
-
 }
+
 //Funcion para eliminar el usuario
-public function deletead($Id)
-{
-
-  $statement=$this->bd->prepare("DELETE * FROM USUARIO WHERE ID_USUARIOS=:Id");
+public function deletead($Id) {
+  $statement=$this->bd->prepare("DELETE * FROM usuarios WHERE ID_USUARIOS=:Id");
   $statement ->bindParam(':Id',$id);
   if($statement->execute())
   {
