@@ -58,10 +58,10 @@ body{
     left: -50%;
     width: 300px;
     height: 420px;
-    background: linear-gradient(0deg, transparent, #f1670b, #f1670b, #f1670b );
+    background: linear-gradient(0deg, transparent, #bb0bf1, #d60bf1, #950bf1 );
     z-index: 1;
     transform-origin: bottom right;
-    animation: animate 6s linear infinite;
+    animation: animate 5s linear infinite;
 }
 
 .box::after{
@@ -74,7 +74,7 @@ body{
     background: linear-gradient(0deg, transparent, #f1670b, #f1670b, #f1670b );
     z-index: 1;
     transform-origin: bottom right;
-    animation: animate 6s linear infinite;
+    animation: animate 3s linear infinite;
     animation-delay: -3s ;
 }
 
