@@ -1,35 +1,22 @@
 <?php
-
-
-class Conexion
-{
+class Conexion{
     public $bd;
-    private $driver = "mysql";
-    private $host = "localhost";
-    private $namebd = "notas2023php";
-    private $user = "root";
-    private $Password = "";
+    private $drive="mysql";
+    private $host="localhost";
+    private $bdname="notas2023php";
+    private $user="root";
+    private $password="";
 
-    public function __construct()
-    {
-
-    try {
-        $bd = new PDO("{$this->driver}:host={$this->host};namebd={$this->namebd}", $this->user,$this->Password);
-
-        $bd->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-
-        echo "Conexion exitosa";
-
-        return $bd;
-
-        
-    } catch (PDOException $e) {
-        echo "No se puede realizar la conexion ".$e->getMessage();
+    public function __construct(){
+        try{
+            $bd=new PDO("{$this->drive}:host={$this->host};bdname={$this->bdname}",$this->user,$this->password);
+            $bd->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+            echo "conexion realizada";
+            return $bd;
+            
+        }catch(PDOException $e){
+            echo "Ha surgido un error: Detalle " . $e->getMessage();
+        }
     }
-
-
-    }
-
 }
-
 ?>

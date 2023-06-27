@@ -1,116 +1,63 @@
-<style>
-
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap');
-
-*
-{
-    margin: 0;
-    padding: 0;
-    font-family: 'poppins',sans-serif;
-}
-section
-{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh;
-    width: 100%;
-    
-    background: rgb(2,0,36);
-    background: linear-gradient(90deg, rgb(6, 3, 59) 0%, rgb(14, 14, 131) 35%, rgb(59, 94, 209) 100%);
-    background-position: center;
-    background-size: cover;
-}
-.form-box{
-    position: relative;
-    width: 400px;
-    height: 450px;
-    background: transparent;
-    border: 2px solid rgba(255,255,255,0.5);
-    border-radius: 20px;
-    backdrop-filter: blur(15px);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
-}
-h2{
-    font-size: 2em;
-    color: #fff;
-    text-align: center;
-}
-.inputbox{
-    position: relative;
-    margin: 30px 0;
-    width: 310px;
-    border-bottom: 2px solid #fff;
-}
-.inputbox label{
-    position: absolute;
-    top: 5%;
-    left: 5px;
-    transform: translateY(-50%);
-    color: #fff;
-    font-size: 1em;
-    pointer-events: none;
-    transition: .5s;
-}
-input:focus ~ label,
-input:valid ~ label{
-top: -5px;
-}
-.inputbox input {
-    width: 100%;
-    height: 50px;
-    background: transparent;
-    border: none;
-    outline: none;
-    font-size: 1em;
-    padding:0 35px 0 5px;
-    color: #fff;
-}
-.inputbox ion-icon{
-    position: absolute;
-    right: 8px;
-    color: #fff;
-    font-size: 1.2em;
-    top: 20px;
-}
-
-button{
-    width: 100%;
-    height: 40px;
-    border-radius: 40px;
-    background: #fff;
-    border: none;
-    outline: none;
-    cursor: pointer;
-    font-size: 1em;
-    font-weight: 600;
-}
-.register{
-    font-size: .9em;
-    color: #fff;
-    text-align: center;
-    margin: 25px 0 10px;
-}
-.register p a{
-    text-decoration: none;
-    color: #fff;
-    font-weight: 600;
-}
-.register p a:hover{
-    text-decoration: underline;
-}
-
-</style>
-
-
-
 <!DOCTYPE html>
 <html lang="es">
 <head>
 <title>Registro Usuario</title>
+<style>
+body {
+    background: linear-gradient(to right, lightblue, blue);
+    font-family: Arial, sans-serif;
+}
+
+.form-box {
+    width: 300px;
+    padding: 40px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: #191919;
+    text-align: center;
+}
+
+.form-box input[type="text"], .form-box input[type="password"] {
+    border: 0;
+    background: none;
+    display: block;
+    margin: 20px auto;
+    text-align: center;
+    border: 2px solid #3498db;
+    padding: 10px 10px;
+    width: 200px;
+    outline: none;
+    color: white;
+    border-radius: 24px;
+    transition: 0.25s;
+}
+
+.form-box input[type="text"]:focus, .form-box input[type="password"]:focus {
+    width: 280px;
+    border-color: #2ecc71;
+}
+
+.form-box button {
+    border: 0;
+    background: none;
+    display: block;
+    margin: 20px auto;
+    text-align: center;
+    border: 2px solid #2ecc71;
+    padding: 14px 40px;
+    outline: none;
+    color: white;
+    border-radius: 24px;
+    transition: 0.25s;
+    cursor: pointer;
+}
+
+.form-box button:hover {
+    background: #2ecc71;
+}
+</style>
 </head>
 <body>
     <section>
@@ -120,23 +67,23 @@ button{
                     <h2> Registro de usuario </h2>
 
                     <div class="inputbox">
-                        <input type="text" required>
-                        <label for="">Nombre</label name= txtnombre> 
+                        <input name= "txtnombre" type="text" required>
+                        <label  for="">Nombre</label > 
                     </div>
 
                     <div class="inputbox">
-                        <input type="text" required>
-                        <label for="">Apellido</label name= txtapellido> >
+                        <input name= "txtapellido" type="text" required>
+                        <label for="">Apellido</label > >
                     </div>
 
                     <div class="inputbox">
-                        <input type="text" required>
-                        <label for="">Usuario</label name= txtusuario> >
+                        <input name= "txtusuario" type="text" required>
+                        <label for="">Usuario</label > >
                     </div>
 
                     <div class="inputbox">
-                        <input type="password" required>
-                        <label for="">Contraseña</label name= txtcontrasena> 
+                        <input name= "txtcontrasena" type="password" required>
+                        <label for="">Contraseña</label > 
                     </div>
 
                     <div class="form-group">
@@ -152,7 +99,7 @@ button{
 
                         <div class="form-group">
                             <p> Estado: </p>
-                            <label for="perfil"></label>
+                            <label for="Estado"></label>
                             <select name="txtestado" class="form-select">
                                 <option selected> Elegir opcion </option>
                                 <option value=" Activo "> Activo </option>
