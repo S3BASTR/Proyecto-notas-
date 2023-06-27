@@ -27,24 +27,22 @@ class Administrador extends Conexion {
 
     //funcion para consultar usuarios
     public function getadmin() {
-        $t=[];
-        $SQL = "SELECT * FROM usuarios WHERE PERFIL='Administrador'";
-        $resul = $this->bd->query($SQL);
-        if($result->rowCount()>0)
-        {
-        while ($row = $resul->fetch()) {
-            $t[] = $row;
-        }
-    }
-        return $t;
-    
+        //$row=null;
+ $sql = "SELECT * FROM usuarios WHERE PERFIL='Administrador'";
+ $result = $this->bd->query($sql); 
+ if ($result->rowCount() > 0) {
+     while($row = $result->fetch()) {
+         $resultset[] = $row;
+     }
+ }
+ return $resultset;
 }   
 
     //funcion para listar por id especifico
     public function getidad($ID) 
     {
         $row = null;
-        $statement=$this->bd->prepare("SELECT * FROM usuarios WHERE PERFIL='Administrador' AND ID_USUARIOS=:$ID");
+        $statement=$this->bd->prepare("SELECT * FROM usuarios WHERE PERFIL='Administrador'");
         $statement->bindParam(':ID',$ID);
         $statement->execute();
         
@@ -56,13 +54,14 @@ class Administrador extends Conexion {
     }
 
     //funcion actualizar los datos del usuario
-    public function updatead($ID, $NOMBREUSU, $APELLIDOUSU, $USUARIO, $PASSWORDU, $ESTADO) {
-        $statement=$this->bd->prepare("UPDATE usuarios SET NOMBREUSU=:NOMBREUSU, APELLIDOUSU=:APELLIDOUSU, USUARIO=:USUARIO, PASSWORDU=:PASSWORDU, ESTADO=:ESTADO WHERE ID_USUARIOS= $ID");
+    public function updatead($ID, $NOMBREUSU, $APELLIDOUSU, $USUARIO, $PASSWORDU, $PERFIL, $ESTADO) {
+        $statement=$this->bd->prepare("UPDATE usuarios SET ID_USUARIOS=:ID, NOMBREUSU=:NOMBREUSU, APELLIDOUSU=:APELLIDOUSU, USUARIO=:USUARIO, PASSWORDU=:PASSWORDU, PERFIL=:PERFIL, ESTADO=:ESTADO WHERE ID_USUARIOS= $ID");
         $statement->bindParam(':ID', $ID);
         $statement->bindParam(':NOMBREUSU', $NOMBREUSU);
         $statement->bindParam(':APELLIDOUSU', $APELLIDOUSU);
         $statement->bindParam(':USUARIO', $USUARIO);
         $statement->bindParam(':PASSWORDU', $PASSWORDU);
+        $statement->bindParam(':PERFIL', $PERFIL);
         $statement->bindParam(':ESTADO', $ESTADO);
         if ($statement->execute()) {
             header('location: ../Pages/index.php');

@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Agregar Usuarios</title>
+    <title>Actualizar Administradores</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
     <link href="" rel="stylesheet">
     <link href="" rel="stylesheet">
@@ -27,7 +27,7 @@
        <?php
         require_once('../../Conexion.php');
         require_once('../Modelo/administrador.php');
-        $ID= $_GET['ID'];
+        $ID= $_GET['Id'];
 
         $admin= new Administrador();
         $row= $admin->getidad($ID);
@@ -38,22 +38,22 @@
         <input type="hidden" name="ID" value="<?php echo[$ID]?>">
         <div class="texto"><h1>Editar Usuario</h1></div>
         <label>Nombre</label>
-        <input type="text" class="campo" placeholder="Ingresar Nombre" name="txtNombre" value="<?php echo $row['Nombre']?>">
+        <input type="text" class="campo" placeholder="Ingresar Nombre" name="txtNombre" value="<?php echo $row['NOMBREUSU']?>">
         <label>Apellido</label>
-        <input type="text" class="campo" placeholder="Ingresar Apellido" name="txtApellido" value="<?php echo $row['Apellido']?>">
+        <input type="text" class="campo" placeholder="Ingresar Apellido" name="txtApellido" value="<?php echo $row['APELLIDOUSU']?>">
         <label>Usuario</label>
-        <input type="text" class="campo" placeholder="Ingresar usuario" name="txtUsuario" value="<?php echo $row['Usuario']?>">
+        <input type="text" class="campo" placeholder="Ingresar usuario" name="txtUsuario" value="<?php echo $row['USUARIO ']?>">
         <label>Contraseña</label>
-        <input type="password" class="campo" placeholder="Ingresar usuario" name="txtContra" value="<?php echo $row['Passwor']?>">
+        <input type="password" class="campo" placeholder="Ingresar usuario" name="txtContra" value="<?php echo $row['PASSWORDU']?>">
        
         <label for="Perfil">Perfil</label>
-        <select id="Perfil" class="campo"name="txtPerfil" value="<?php echo $row['Perfil']?>">
+        <select id="Perfil" class="campo"name="txtPerfil" value="<?php echo $row['PERFIL']?>">
         <option value="Administrador">Administrador</option>
         <option value="Docente">Docente</option>
         </select>
 
         <label for="Estado">Estado</label>
-        <select id="Estado" class="campo"name="txtEstado" value="<?php echo $row['Estado']?>">
+        <select id="Estado" class="campo"name="txtEstado" value="<?php echo $row['ESTADO']?>">
         <option value="Activo">Activo</option>
         <option value="No Activo">No Activo</option>
         </select>
