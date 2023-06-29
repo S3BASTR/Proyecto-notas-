@@ -13,7 +13,7 @@ $query = mysqli_query($con, $sql);
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Agregar usuarios</title>
+    <title> Agregar usuarios </title>
 </head>
 
 <style>
@@ -52,35 +52,53 @@ color: white;
 }
         
 .users-form {
-margin-top: 50px;
-text-align: center;
-}
-        
-.users-form h1 {
-font-size: 24px;
-}
-        
-.users-form input[type="text"],
-.users-form input[type="password"],
-.users-form select {
-display: block;
-margin: 10px auto;
-width: 200px;
-padding: 5px;
-}
-        
-.users-table {
-margin-top: 50px;
-}
-        
-.users-table h2 {
-font-size: 24px;
-}
-        
-.users-table table {
-width: 100%;
-border-collapse: collapse;
-}
+            background-color: #f2f2f2;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            font-size: 24px;
+            margin-top: 0;
+        }
+
+        .Formu {
+            margin-top: 20px;
+        }
+
+        .info {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+            margin-bottom: 10px;
+        }
+
+        .campoP,
+        .campoE {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+            margin-bottom: 10px;
+        }
+
+        .btnA {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        .btnA:hover {
+            background-color: #45a049;
+        }
         
 .users-table th,
 .users-table td {
@@ -109,7 +127,7 @@ background-color: #f44336;
 
 <body>
     <div class="navbar">
-        <a class="active" href="">Docentes</a>
+        <a class="active" href="../Docentes/indexd.php">Docentes</a>
         <a class="active" href="">Estudiantes</a>
         <a class="active" href="">Materias</a>
         <a class="active" href="../Inicio.html">Cerrar sesión</a>
@@ -122,7 +140,7 @@ background-color: #f44336;
             <input class="info" type="text" name="lastname" placeholder="Apellidos">
             <input class="info" type="text" name="username" placeholder="Username">
             <input class="info" type="password" name="password" placeholder="Password">
-            
+
             <label for="Perfil">Perfil</label>
             <select id="Perfil" class="campoP" name="perfil">
                 <option value="Administrador">Administrador</option>
@@ -138,6 +156,7 @@ background-color: #f44336;
             <input class="btnA" type="submit" value="Agregar">
         </form>
     </div>
+
 
     <div class="users-table">
         <h2>Usuarios registrados</h2>
