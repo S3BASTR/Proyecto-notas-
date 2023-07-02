@@ -128,8 +128,8 @@ background-color: #f44336;
 <body>
     <div class="navbar">
         <a class="active" href="../Docentes/indexd.php">Docentes</a>
-        <a class="active" href="">Estudiantes</a>
-        <a class="active" href="">Materias</a>
+        <a class="active" href="../Estudiantes/indexes.php">Estudiantes</a>
+        <a class="active" href="../Materias/index_materias.php">Materias</a>
         <a class="active" href="../Inicio.html">Cerrar sesión</a>
     </div>
 

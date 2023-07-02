@@ -2,7 +2,7 @@
 include("connection.php");
 $con = connection();
 
-$sql = "SELECT * FROM docentes";
+$sql = "SELECT * FROM materias";
 $query = mysqli_query($con, $sql);
 ?>
 
@@ -13,7 +13,7 @@ $query = mysqli_query($con, $sql);
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title> Agregar docentes </title>
+    <title> Agregar materias </title>
 </head>
 
 <style>
@@ -127,49 +127,25 @@ background-color: #f44336;
 
 <body>
     <div class="navbar">
-        <a class="active" href="../Estudiantes/indexes.php">Estudiantes</a>
-        <a class="active" href="../Materias/index_materias.php">Materias</a>
         <a class="active" href="../Inicio.html">Cerrar sesión</a>
     </div>
 
     <div class="users-form">
-        <h1>Crear docente</h1>
-        <form action="insert_docentes.php" method="POST" class="Formu">
-            <input class="info" type="text" name="named" placeholder="Nombre">
-            <input class="info" type="text" name="lastnamed" placeholder="Apellido">
-            <input class="info" type="number" name="documentd" placeholder="Documento">
-            <input class="info" type="email" name="emaild" placeholder="Correo">
-            <input class="info" type="text" name="materiasd" placeholder="Materias">
-
-            <label for="Perfil">Perfil</label>
-            <select id="Perfil" class="campoP" name="perfild">
-                <option value="Administrador">Administrador</option>
-                <option value="Docente">Docente</option>
-            </select>
-
-            <label for="Estado">Estado</label>
-            <select id="Estado" class="campoE" name="estadod">
-                <option value="Activo">Activo</option>
-                <option value="No Activo">No Activo</option>
-            </select>
-
+        <h1>Añadir materia</h1>
+        <form action="insert_materias.php" method="POST" class="Formu">
+            <input class="info" type="text" name="namema" placeholder="Nombre">
+            
             <input class="btnA" type="submit" value="Agregar">
         </form>
     </div>
 
     <div class="users-table">
-        <h2> Docentes registrados </h2>
+        <h2> Materias registradas </h2>
         <table class="tablita">
             <thead class="CamposInf">
                 <tr class= "InfoCam">
                     <th>ID</th>
-                    <th>Nombre</th>
-                    <th>Apellidos</th>
-                    <th>Documento</th>
-                    <th>Correo</th>
-                    <th>Materias</th>
-                    <th>Perfil</th>
-                    <th>Estado</th>
+                    <th>Nombre materias</th>
                     <th></th>
                     <th></th>
                 </tr>
@@ -177,16 +153,11 @@ background-color: #f44336;
             <tbody>
                 <?php while ($row = mysqli_fetch_array($query)): ?>
                     <tr>
-                        <th><?= $row['ID_DOCENTE'] ?></th>
-                        <th><?= $row['NOMBRED'] ?></th>
-                        <th><?= $row['APELLIDOD'] ?></th>
-                        <th><?= $row['DOCUMENTOD'] ?></th>
-                        <th><?= $row['CORREOD'] ?></th>
-                        <th><?= $row['MATERIAD'] ?></th>
-                        <th><?= $row['PERFILD'] ?></th>
-                        <th><?= $row['ESTADOD'] ?></th>
-                        <th><a href="updatedoc.php?ID_DOCENTE=<?= $row['ID_DOCENTE'] ?>" class="users-table--edit">Editar</a></th>
-                        <th><a href="delete_docentes.php?ID_DOCENTE=<?= $row['ID_DOCENTE'] ?>" class="users-table--delete">Eliminar</a></th>
+                        <th><?= $row['ID_MATERIA'] ?></th>
+                        <th><?= $row['MATERIA'] ?></th>
+                        
+                        <th><a href="updatemat.php?ID_MATERIA=<?= $row['ID_MATERIA']?>" class="users-table--edit">Editar</a></th>
+                        <th><a href="delete_materias.php?ID_MATERIA=<?= $row['ID_MATERIA']?>" class="users-table--delete">Eliminar</a></th>
                     </tr>
                 <?php endwhile; ?>
             </tbody>

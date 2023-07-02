@@ -11,7 +11,7 @@ $MATERIAD = $_POST['materiasd'];
 $PERFILD = $_POST['perfild'];
 $ESTADOD = $_POST['estadod'];
 
-$sql = "INSERT INTO docentes VALUES('$ID_DOCENTE ','$NOMBRED','$APELLIDOD','$DOCUMENTOD','$CORREOD','$MATERIAD','$PERFIL','$ESTADO')";
+$sql = "INSERT INTO docentes VALUES('$ID_DOCENTE ','$NOMBRED','$APELLIDOD','$DOCUMENTOD','$CORREOD','$MATERIAD','$PERFILD','$ESTADOD')";
 $query = mysqli_query($con, $sql);
 if($query){
     Header("Location: indexd.php");
