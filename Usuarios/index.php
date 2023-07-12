@@ -1,9 +1,14 @@
 <?php
 include("connection.php");
+
 $con = connection();
 
 $sql = "SELECT * FROM usuarios";
 $query = mysqli_query($con, $sql);
+?>
+
+<?php
+include_once("Validar.php");
 ?>
 
 <!DOCTYPE html>
@@ -130,7 +135,7 @@ background-color: #f44336;
         <a class="active" href="../Docentes/indexd.php">Docentes</a>
         <a class="active" href="../Estudiantes/indexes.php">Estudiantes</a>
         <a class="active" href="../Materias/index_materias.php">Materias</a>
-        <a class="active" href="../Inicio.html">Cerrar sesión</a>
+        <a class="active" href="../Inicio.php">Cerrar sesión</a>
     </div>
 
     <div class="users-form">
