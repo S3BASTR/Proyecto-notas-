@@ -1,5 +1,5 @@
 <?php
-if ($_POST['Email'] =="Miguel" && $_POST['contrasena'] =="12345") 
+if ($_POST['Email'] == "Juan" && $_POST['contrasena'] =="12345") 
 {
     Session_start();
     //Declarar las variables de sesion
@@ -8,12 +8,12 @@ if ($_POST['Email'] =="Miguel" && $_POST['contrasena'] =="12345")
     $_SESSION['start']= time();
     $_SESSION['expire'] = $_SESSION['start'] + (1*60);
 
-    header("Location: index.php");
+header("Location: index.php");
 }else 
 {
 echo "<script>
 alert('Datos incorrectos');
-window.location = 'index.php';
+window.location = '../Inicio.php';
 </script>";
 }
 

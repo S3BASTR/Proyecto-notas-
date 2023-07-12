@@ -91,7 +91,7 @@ color: white;
 </head>
 <body>
 <div class="navbar">
-        <a class="active" href="../Inicio.html">Cerrar sesión</a>
+        <a class="active" href="../Inicio.php">Cerrar sesión</a>
     </div>
     <form action="insert_estudiantes.php" method="POST" class="Formu">
         <div class="textoT"><h1>Agregar Estudiante</h1></div>

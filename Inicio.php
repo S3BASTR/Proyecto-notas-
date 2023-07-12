@@ -115,7 +115,7 @@ button{
                     <h2>Login</h2>
                     <div class="inputbox">
                         <input name="Email" type="text" required>
-                        <label> Correo </label>
+                        <label> Nombre de usuario </label>
                     </div>
                     <div class="inputbox">
                         <input name="contrasena" type="password" required>

@@ -127,7 +127,7 @@ background-color: #f44336;
 
 <body>
     <div class="navbar">
-        <a class="active" href="../Inicio.html">Cerrar sesión</a>
+        <a class="active" href="../Inicio.php">Cerrar sesión</a>
     </div>
 
     <div class="users-form">

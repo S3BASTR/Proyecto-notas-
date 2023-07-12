@@ -129,7 +129,7 @@ background-color: #f44336;
     <div class="navbar">
         <a class="active" href="../Estudiantes/indexes.php">Estudiantes</a>
         <a class="active" href="../Materias/index_materias.php">Materias</a>
-        <a class="active" href="../Inicio.html">Cerrar sesión</a>
+        <a class="active" href="../Inicio.php">Cerrar sesión</a>
     </div>
 
     <div class="users-form">
